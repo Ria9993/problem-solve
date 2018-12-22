@@ -30,4 +30,4 @@ int main() {
 	}
 	printf("%.0lf", res);
 	return 0;
-}
+}	
