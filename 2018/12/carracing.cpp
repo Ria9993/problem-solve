@@ -8,13 +8,16 @@ int pop() { return queue[tail++]; }
 int main() {
 	int n, x, cnt = 1;
 	scanf("%d", &n);
-	for (int i = 0; i<n; i++) {
-		scanf("%d", &x);
+	for (int i = 0; i<n||(top!=tail||i<n); i++) {
+		if(i<n)scanf("%d", &x);
 		if (cnt == x) cnt++;
-		else if (cnt == queue[tail]) { push(x); pop(); cnt++; }
-		else if (tail == top) push(x);
-		else { printf("NO"); return 0; }
+		else if (cnt == queue[tail] && i >= n){
+			pop(); cnt++;}
+		else if (cnt == queue[tail]) { 
+			push(x); pop(); cnt++; }
+		else push(x);
 	}
-	printf("YES");
+	if(tail==top) printf("YES");
+	else printf("NO");
 	return 0;
 }
