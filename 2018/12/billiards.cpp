@@ -1,3 +1,4 @@
+#pragma warning(disable:4996)
 #include <stdio.h>
 #include <stdlib.h>
 #include <algorithm>
@@ -24,8 +25,8 @@ int main() {
 			if (y >= size) { arr[cnt++] = 4; printf("S ");
 			}//4 s
 
-		}
-		y += n;
+		}	
+		y += n;	
 		x += m;
 	}
 	return 0;

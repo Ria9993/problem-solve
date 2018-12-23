@@ -4,6 +4,8 @@
 #define as ans[j]
 using namespace std;
 int main() {
+	freopen("input.txt","r",stdin);
+	freopen("output.txt","w",stdout);
 	int n, arr[30000][5], ans[5];
 	scanf("%d", &n);
 	for (int i = 0; i<n; i++) {
@@ -11,7 +13,7 @@ int main() {
 	}
 	for (int j = 0; j<5; j++)scanf("%1d", &ans[j]);
 	for (int i = 0; i<n; i++) {
-		int flag = true;
+		int flag = 2;
 		for (int j = 0; j<5; j++) {
 			if (arr[i][j] == ans[j])continue;
 			switch (arr[i][j]) {
@@ -26,9 +28,9 @@ int main() {
 				case 9: if (as == 6 || as == 8)continue;
 				case 0: if (as == 8)continue;
 			}
-			flag = false;
+			flag--;
 		}
-		if (flag) {
+		if (flag>0) {
 			printf("OPEN"); return 0;
 		}
 	}
