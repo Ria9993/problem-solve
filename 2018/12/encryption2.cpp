@@ -19,14 +19,15 @@ int main() {
 				}
 			}
 		}
-		return 0;
 	}
-	for (int i = 0; i<6; i++) { //암호화
-		for (int j = 0; j < (cnt / 6) + (cnt % 6 ? 1 : 0); j++) {
-			switch (str[(j * 6) + i]) {
-			case ' ': printf("*"); break;
-			case '\0': printf("."); break;
-			default: printf("%c", str[(j * 6) + i]); break;
+	else {
+		for (int i = 0; i<6; i++) { //암호화
+			for (int j = 0; j < (cnt / 6) + (cnt % 6 ? 1 : 0); j++) {
+				switch (str[(j * 6) + i]) {
+					case ' ': printf("*"); break;
+					case '\0': printf("."); break;
+					default: printf("%c", str[(j * 6) + i]); break;
+				}
 			}
 		}
 	}

