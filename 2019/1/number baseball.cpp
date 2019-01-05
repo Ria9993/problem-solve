@@ -2,7 +2,7 @@
 
 //typedef struct
 int wei[11]={-111,0,};
-int arr[101][6]={0.};
+int arr[101][6]={0,};
 int main(){
     int n;
     int res=0;
