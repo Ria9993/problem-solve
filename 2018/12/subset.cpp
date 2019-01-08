@@ -8,7 +8,7 @@ void f(int n, int now, char *str, int len) {
    for (int i = now + 1; i <= n; i++) f(n, i, str, len + 1);
 }
 int main() {
-   char str[101] = { 0, }; //배열은 참고로 그 자체가 주소임
+   char str[101] = { 0, };
    int n;
    scanf("%d", &n);
    f(n, 0, str, 0);
