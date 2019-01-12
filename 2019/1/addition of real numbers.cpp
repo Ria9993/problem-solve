@@ -4,16 +4,24 @@
 #include <algorithm>
 #define max(x,y) x>y?(x):(y)
 #define SP i-(100-strlen(num))
+#define EP i+(100-strlen(num2))
 using namespace std;
-char num[110];
-char num2[110];
+char num[110], num2[110];
 char sum[210];
-void chk(int n) {
-	if (sum[n] == '9'+1) {
-		if (sum[n - 1]==0) sum[n - 1] = '1';
-		else sum[n - 1]++;
-		sum[n] = '0';
-		chk(--n);
+void chk(int n,char type) {
+	switch(type) {
+		case '+' : if (sum[n] == '9'+1) {
+			if (sum[n - 1]==0) sum[n - 1] = '1';
+			else sum[n - 1]++;
+			sum[n] = '0';
+			chk(n-1,'-');
+		} break;
+		case '-' : if (sum[n] == '0'-1) {
+			if (sum[n - 1] == 0) sum[n + 1] = '9';
+			else sum[n - 1]--;
+			sum[n] = '0';
+			chk(n+1,'+');
+		} break;
 	}
 }
 int main() {
@@ -36,7 +44,7 @@ int main() {
 				sum[i] -= 10;
 				if (sum[i - 1] == 0) sum[i - 1] = '1';
 				else sum[i - 1]++;
-				chk(i - 1);
+				chk(i - 1,'+');
 				if (sum[100 - nlen-1] != 0)nlen++;
 				//if (sum[100 + mlen] == 0)mlen--;
 			}
