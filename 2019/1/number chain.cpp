@@ -29,7 +29,7 @@ bool chk(int arr[], int sint, int len) {
 int main() {
 	char str[15];
 	int sint;
-	int res[10000], cnt = 0, asc, des;
+	int res[10000], cnt = 0, asc, des;	
 	memset(res, 0, sizeof(res));
 
 	scanf("%s", str);
