@@ -1,3 +1,3 @@
-# vscode_git
+# problem-solve
 
-## Repository for use with vscode
+repository for solved problems
