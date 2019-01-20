@@ -44,7 +44,7 @@ int main() {
 
 		res[cnt] = des - asc;
 		strcpy(str, Bstr(res[cnt++]));
-		} while (!chk(res, sint,cnt));
+	} while (!chk(res, sint,cnt));
 	printf("%d\n", cnt - 1);
 	for (int i = 0; i<cnt - 1; i++)printf("%d\n", res[i]);
 	return 0;
