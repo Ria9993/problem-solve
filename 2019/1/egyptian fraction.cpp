@@ -18,13 +18,13 @@ void f(_b x) {
 	int tz = ((tm / x.mo)*x.za) - (tm / tmp); //통분시 분자
 	if (tz == 1) { printf("+1/%d",tm); return;}//종료조건
 	printf("+");
-	f({ tz,tm });//통분
+	f({ tz,tm });//통분-
 	return;
 }
 int main() {
 	freopen("input.txt", "r", stdin);
 	freopen("output.txt", "w", stdout);
-	_b x;
+	_b x;	
 	scanf("%d", &x.za);
 	scanf("%d", &x.mo);
 	f({ x.za,x.mo });
