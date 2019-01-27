@@ -3,7 +3,7 @@
 #include <math.h>
 typedef struct _b { int za; int mo; }_b;
 int gcd(int x, int y) { return y ? gcd(y, x % y) : x; }
-int lcm(int x, int y) { return (x * (y / gcd(y, x))); }
+int lcm(int x, int y) 	{ return (x * (y / gcd(y, x))); }
 int mx(_b x) { //최대 이집티안분수
 	double tmp = (double)x.za / x.mo;
 	for (int i = 2;; i++) {
