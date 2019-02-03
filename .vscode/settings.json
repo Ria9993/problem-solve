@@ -27,5 +27,10 @@
             "background-repeat": "no-repeat",
             "opacity": 0.25
         }
-    }
+    },
+    "live2d.width": 225,
+    "live2d.height": 300,
+    "live2d.model": "poi",
+    "live2d.headPos": 0.5,
+    "live2d.scale": 1   
 }

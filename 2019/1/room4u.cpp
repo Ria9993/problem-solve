@@ -32,7 +32,7 @@ int main() {
             for(int j=sch[i].s;j<sch[i].e;j++)flag[j]=i;
             cnt++;
         }
-    }
+    }  
     printf("%d",cnt);
     return 0;
 }
