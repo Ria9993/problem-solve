@@ -1,38 +1,32 @@
 {
-    "editor": {
-        "fontSize": 15
-    },
+    "editor.fontSize": 14,
     "workbench.colorTheme": "Monokai",
     "files.associations": {
         "cstdlib": "cpp"
     },
-    "powermode": {
-        "enabled": true,
-        "enableShake": false,
-    },
-    "background": {
-        "enabled": true,
-        "useDefault": false,
-        "customImages": [
-            "file:///D:/vscode/1.png",
-            "file:///D:/vscode/2.png"
-        ],
-        "style": {
-            "content": "''",
-            "pointer-events": "none",
-            "position": "absolute",
-            "z-index": "99999",
-            "width": "200%",
-            "height": "200%",
-            "background-position": "right",
-            "background-repeat": "no-repeat",
-            "opacity": 0.25
-        }
+    "powermode.enabled": true,
+    "powermode.enableShake": false,
+
+    "background.enabled": true,
+    "background.useDefault": false,
+    "background.customImages": [
+        "file:///D:/vscode/1.png",
+        "file:///D:/vscode/2.png"
+    ],
+    "background.style": {
+        "content": "''",
+        "pointer-events": "none",
+        "position": "absolute",
+        "z-index": "99999",
+        "width": "200%",
+        "height": "200%",
+        "background-position": "right",
+        "background-repeat": "no-repeat",
+        "opacity": 0.25
     },
     "live2d.width": 225,
     "live2d.height": 300,
     "live2d.model": "poi",
     "live2d.headPos": 0.5,
     "live2d.scale": 1,
-    
 }
