@@ -1,6 +1,6 @@
 {
     "editor.fontSize": 14,
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Quiet Light",
     "files.associations": {
         "cstdlib": "cpp",
         "algorithm": "cpp"
