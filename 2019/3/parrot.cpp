@@ -9,4 +9,4 @@ int main() {
     int tmp;
     for(int i=0;i<n;i++){scanf("%d",&tmp);printf("%d ",tmp);}
 	return 0;
-}
+}   
