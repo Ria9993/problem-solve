@@ -9,11 +9,11 @@ typedef struct _xy {
 	int color;
 }_xy;
 _xy queue[5000000] = { 0, };
-_xy Cqueue[5000000] = { 0, };
+_xy Cstack[5000000] = { 0, };
 int map[2010][2010] = { { 0, }, };
 bool Cmap[2010][2010] = { { 0, }, };
 int top = 0, tail = 0;
-int Ctop = 0, Ctail = 0;
+int Ctop = 0;
 bool check[100010] = { 0, };
 int mapSize, N;
 int cnt = 0;
@@ -21,8 +21,8 @@ int cnt = 0;
 void push(int x, int y, int color) { if (x>0 && x<=mapSize&&y>0 && y<= mapSize)if(map[x][y]==0)queue[top++] = { x,y,color }; }
 void push(int x, int y) { if (x>0 && x<= mapSize &&y>0 && y<= mapSize)queue[top++] = { x,y }; }
 _xy pop() { return queue[tail++]; }
-void Cpush(int x, int y) { if (x>0 && x <= mapSize && y>0 && y <= mapSize)if(Cmap[x][y]==0)Cqueue[Ctop++] = { x,y }; }
-_xy Cpop() { return Cqueue[Ctail++]; }
+void Cpush(int x, int y) { if (x>0 && x <= mapSize && y>0 && y <= mapSize)if(Cmap[x][y]==0)Cstack[Ctop++] = { x,y }; }
+_xy Cpop() { return Cstack[--Ctop]; }
 
 int main() {
 	int x, y, len;
@@ -38,7 +38,7 @@ int main() {
 			//bfs(tmp);
 			_xy loc = pop();
 			if (!(loc.x > 0 && loc.x <= mapSize && loc.y > 0 && loc.y <= mapSize))continue;
-			if (map[loc.x][loc.y])continue;
+			if (map[loc.x][loc.y]){Cpush(x,y);continue;}
 			map[loc.x][loc.y] = loc.color;
 			push(loc.x + 1, loc.y, map[loc.x][loc.y]);
 			push(loc.x - 1, loc.y, map[loc.x][loc.y]);
@@ -46,28 +46,30 @@ int main() {
 			push(loc.x, loc.y - 1, map[loc.x][loc.y]);
 		}
 		//chk(x, y);
-		Cpush(x, y);
-		for(;Ctail<Ctop;) {
+		while(Ctop){
 			system("cls");
 			for (int j = 1; j <= mapSize; j++) {
 				for (int k = 1; k <= mapSize; k++) {
-					printf("%d", Cmap[j][k]);
+					printf("%d", map[j][k]);
 				}
 				printf("\n");
 			}
+			Sleep(100);
 			_xy now = Cpop();
 			if (!(now.x > 0 && now.x <= mapSize && now.y > 0 && now.y <= mapSize))continue;
 			if (map[now.x][now.y] == 0)continue;
 			if (Cmap[now.x][now.y])continue;
-			else Cmap[now.x][now.y] = true;
-			if (!check[map[now.x][now.y]]) { check[map[now.x][now.y]] = true; cnt++; }
-			if (cnt == N)break;
-			Cpush(now.x + 1, now.y);
-			Cpush(now.x - 1, now.y);
-			Cpush(now.x, now.y + 1);
-			Cpush(now.x, now.y - 1);
+			if (map[x][y]!=map[x+1][y]||
+				map[x][y]!=map[x+1][y]||
+				map[x][y]!=map[x+1][y]||
+				map[x][y]!=map[x+1][y]) {
+				if (!check[map[now.x][now.y]]){ 
+					check[map[now.x][now.y]] = true; 
+					cnt++; 
+				}
 		}
-		Ctail = Ctop = 0;
+			if (cnt == N)break;
+		}
 		if (cnt == N) {
 			printf("%d", len);
 			return 0;
