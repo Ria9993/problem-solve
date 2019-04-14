@@ -2,7 +2,7 @@
     "editor.fontSize": 14,
     "workbench.colorTheme": "Quiet Light",
     "files.associations": {
-        "cstdlib": "cpp",
+        "cstdlib" : "Quiet Light",
         "algorithm": "cpp"
     },
     "powermode.enabled": true,
@@ -30,4 +30,10 @@
     "live2d.model": "poi",
     "live2d.headPos": 0.5,
     "live2d.scale": 1,
+    "code-runner.executorMap": {
+        "c": "cd $dir && gcc -o $fileNameWithoutExt $fileName -g && $dir$fileNameWithoutExt",   
+        "cpp": "cd $dir && g++ -o $fileNameWithoutExt $fileName -g && $dir$fileNameWithoutExt"
+    },
+        // Window 10 에서는 Default Shell 이 Powershell이기 때문에 cmd로 변경해야 정상적으로 실행 됨.
+        "terminal.integrated.shell.windows": "C:\\Windows\\SysWOW64\\cmd.exe"
 }
