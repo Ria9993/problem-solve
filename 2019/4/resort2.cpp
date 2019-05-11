@@ -23,3 +23,8 @@ int main() {
     printf("%d",mem[N+1][min]);
     return 0;
 }
+
+/*
+int f(int day, int coupon) { 
+    if (day > N) return 0; if (dp[day][coupon] == -1) dp[day][coupon] = chk[day] ? f(day + 1, coupon) : min({coupon >= 3 ? f(day + 1, coupon - 3) : f(day + 1, coupon) + 10000, f(day + 3, coupon + 1) + 25000, f(day + 5, coupon + 2) + 37000}); return dp[day][coupon]; } 
+*/
