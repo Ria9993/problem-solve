@@ -12,7 +12,7 @@ int main() {
 	}
 	for (int i = 1; i <= n; i++) {
 		if (arr[i] > sum_b - sum_a + arr[i])left = i;
-		sum_a = sum_b = 0;
+		sum_a = sum_b = 0;  
 		for (int j = left-1; j; j -= j & -j) sum_a += tree[j];
 		for (int j = i; j; j -= j & -j) sum_b += tree[j];
 		if (sum_b - sum_a>max || i==1) {
