@@ -3,8 +3,8 @@
 int n,left,max,sum_a=0,sum_b=0,l,r;
 int arr[100010] = { 0, }, tree[100010] = { 0, };
 int main() {
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+	//freopen("input.txt", "r", stdin);
+	//freopen("output.txt", "w", stdout);
 	scanf("%d", &n);
 	for (int i = 1; i <= n; i++){ 
 		scanf("%d", &arr[i]);
@@ -17,8 +17,7 @@ int main() {
 		for (int j = i; j; j -= j & -j) sum_b += tree[j];
 		if (sum_b - sum_a>max || i==1) {
 			max = sum_b - sum_a;
-			l = left;
-			r = i;
+			l = left;r = i;
 		}
 	}
 	printf("%d %d %d", l, r, max);
