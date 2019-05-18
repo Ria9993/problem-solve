@@ -32,12 +32,6 @@ int main() {
     }
     f(0,0,0);
     printf("%d\n",memo[n-1][n-1]);
-    /*
-    for(int i=0;i<n;i++) {
-        for(int j=0;j<n;j++) printf("%d ",memo[i][j]);
-        printf("\n");
-    }
-    */
     rev(n-1,n-1);
     return 0;
 }
