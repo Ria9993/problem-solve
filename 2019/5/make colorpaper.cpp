@@ -25,6 +25,8 @@ _xy f(_xy st,_xy ed) {
     return {map[st.x][st.y]?0:1,map[st.x][st.y]?1:0};
 }
 int main() {
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdin);
     scanf("%d",&n);
     for(int i=0;i<n;i++) {
         for(int j=0;j<n;j++) scanf("%d",&map[i][j]);
