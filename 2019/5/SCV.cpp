@@ -4,7 +4,7 @@ int n,map[1000][1000];
 int memo[1000][1000]={0,};
 void f(int x,int y,int sum) {
     sum+=map[x][y];
-    if(sum>memo[x][y]||memo[x][y]==0) {
+    if(sum>memo[x][y]|| memo[x][y]==0) {
         memo[x][y]=sum;
         if(x<n&&y<n) {
             f(x+1,y,sum);
@@ -13,7 +13,7 @@ void f(int x,int y,int sum) {
     }
 }
 void rev(int x,int y) {
-    if(x==0&&y==0)return;
+    if(x==0&&y==0)return; //last
     if(memo[x-1][y]>memo[x][y-1]) {
         rev(x-1,y);
         printf("D\n");
@@ -24,8 +24,8 @@ void rev(int x,int y) {
     }
 }
 int main() {
-    freopen("input.txt","r",stdin);
-    freopen("output.txt","w",stdin);
+    // freopen("input.txt","r",stdin);
+    // freopen("output.txt","w",stdout);
     scanf("%d",&n);
     for(int i=0;i<n;i++) {
         for(int j=0;j<n;j++) scanf("%d",&map[i][j]);
